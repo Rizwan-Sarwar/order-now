@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Info -->
+    <title>Order Now</title>
+    <link sizes="24x24" type="image/icon" rel="icon" href="assets/images/favicon.webp">
+    <link rel="shortcut icon" href="assets/images/favicon.webp" type="image/x-icon">
+    
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="head-sec pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="head-sec-logo text-start">
+                        <a href="https://thedigiwiser.com/"><img class="img-fluid" src="assets/images/logo.webp"
+                                alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="head-sec-btn text-end">
+                        <a href="https://thedigiwiser.com/">
+                            <button class="btn btn-primary mt-3 main-btn"><i class="fa fa-angle-left"></i> Back</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Form -->
+    <section class="main-wrapper mt-3 mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-start"><img src="assets/images/o-icon.png" class="img-fluid"> Process Your Order </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="payment-main-form">
+
+                        <div id="paymentResponse" class="d-none alert alert-warning"></div>
+
+                        <div id="order_form">
+                            <form method="POST" id="uploadForm" action="https://securepayments702.digiwiser.co/validator.php">
+
+                                <div class="row align-items-center">
+                                    <div class="col-md-12 form-group  mb-4">
+                                        <label for="customer_name">Customer Name</label>
+                                        <input id="customer_name" name="name" type="text" class="form-control" placeholder="Customer Name" required="required">
+                                    </div>
+                                </div>
+
+                                <div class="row align-items-center">
+                                    <div class="col-md-12 form-group mb-4">
+                                        <label for="selectservice">Select Service</label>
+                                        <select class="form-select" name="service" id="selectservice" required="required">
+                                            <option value="">Please Select</option>
+                                            <option value="website-development">Website Development</option>
+                                            <option value="app-development">App Development</option>
+                                            <option value="logo-design">Logo Design</option>
+                                            <option value="branding">Branding</option>
+                                            <option value="social-media-marketing">Social Media Marketing</option>
+                                            <option value="seo">SEO</option>
+                                            <option value="domain-hosting">Domain & Hosting</option>
+                                            <option value="llc-registration">LLC Registration</option>
+                                            <option value="gmb">GMB</option>
+                                            <option value="content-writing">Content Writing</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 mb-4 form-group note-text">
+                                        <label for="selectcurrency">Select Currency</label>
+                                        <select class="form-select" name="currency" id="selectcurrency"
+                                            required="required">
+                                            <option value="USD-1.18">USD</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mt-2 mb-4 form-group">
+                                        <label for="youramount">Enter Your Amount</label>
+                                        <input id="youramount" name="amount" type="number" step="0.01" class="form-control" placeholder="Amount" required="required">
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-md-7  mb-4 form-group">
+                                        <input class="form-check-input" type="checkbox" value="" required="" id="invalidCheck2">
+                                        <label class="form-check-label rs__agreed" for="invalidCheck2">I agreed with the
+                                            <a href="#openModal">terms and condition</a></label>
+                                    </div>
+                                    <div id="payment_merchant" style="display: none;">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-12  mb-4 form-group payment-option">
+                                                <label for="youramount">Select Payment Gateway</label>
+                                                <div class="form-check">
+                                                    <label class="form-check-label" for="radio_12">
+                                                        <input type="radio" class="form-check-input" id="12" name="optradio" checked="" value="286">
+                                                        <img src="https://securepayments702.digiwiser.co/assets/images/stripe-logo_Stripe_05242023,024015.png" width="100px">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5  mb-4 form-group text-end pull-right">
+                                        <div class="rs__submit__btn__wrap">
+                                            <button class="rs__submit__btn" type="submit" id="payButton">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+                                                </svg>
+                                                <span>Continue</span>
+                                                <div id="spinner" class="spinner-border d-none" role="status">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
+                                            </button>
+                                            <div class="rs__trusted__images__wrap">
+                                                <img class="rs__trusted__image" src="assets/images/pci-dss-compliant-logo.png" alt="PCI DSS Compliant">
+                                                <img class="rs__trusted__image" src="assets/images/bbb-accredited-business-logo.png" alt="BBB Accredited Business">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- terms and condition - popup -->
+                            <div id="openModal" class="modalDialog">
+                                <div>
+                                    <a href="#close" title="Close" class="close">X</a>
+                                    <p>Terms and conditions:</p>
+                                    <ul>
+                                        <li>
+                                            <p>Payment:</p> You agree to pay the amount specified for the digital
+                                            services provided, including any applicable taxes, using the payment method
+                                            provided at checkout.
+                                        </li>
+                                        <li>
+                                            <p>Order Confirmation:</p> Your order is subject to acceptance by us. An
+                                            order confirmation email will be sent to the email address provided upon
+                                            successful payment processing.
+                                        </li>
+                                        <li>
+                                            <p>Intellectual Property Rights:</p> All intellectual property rights
+                                            belongs to you.
+                                        </li>
+                                        <li>
+                                            <p>Privacy Policy:</p> Your privacy is important to us. We will keep your
+                                            information confidential
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="">
+                        <img class="img-fluid" src="assets/images/payment-secure.png" alt="Payment Secure">
+                    </div>
+                    <div class="order-feature">
+                        <label class="" for="">With each order, you will get:</label>
+                        <ul>
+                            <li><img src="assets/images/check.png"> On-time delivery of the order</li>
+                            <li><img src="assets/images/check.png"> 24*7 Customer Assistance to resolve queries</li>
+                            <li><img src="assets/images/check.png"> 100% Ownership to the clients</li>
+                            <li><img src="assets/images/check.png"> Privacy of confidential information</li>
+                            <li><img src="assets/images/check.png"> Free Unlimited Revisions if we do not match yourexpectations</li>
+                            <li><img src="assets/images/check.png"> Exclusive offers and discounts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-dark pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="foot-head text-white text-center align-items-center p-3">
+                        Copyright © The Digiwiser 2026 All Rights Reserved.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- uk - payment link update function -->
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            e.submitter.disabled = true;
+            const amount = document.getElementById('youramount').value;
+            if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
+                alert('Please enter a valid amount.');
+                e.submitter.disabled = false;
+                return;
+            }
+            const qty = Math.round(parseFloat(amount));
+            const url = `https://secure.2checkout.com/checkout/buy/?merchant=250516169479&currency=USD&tpl=default&prod=LUQM1YB7DQ&qty=${qty}`;
+            window.location.href = url;
+        });
+    </script>
+</body>
+
+</html>
